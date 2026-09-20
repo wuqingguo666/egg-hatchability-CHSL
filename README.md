@@ -1,6 +1,6 @@
 # Egg Hatchability Prediction using CHSL
 
-This repository contains a cleaned implementation of the final paper workflow for predicting egg hatchability with Conditional Tabular Generative Adversarial Networks and Hierarchical Supervised Learning (CHSL). The code retains the reported RF, LightGBM, SVR, HSL, and CHSL structures while removing exploratory and legacy fixed-split experiments.
+This repository contains a cleaned implementation of the final paper workflow for predicting egg hatchability with Conditional Tabular Generative Adversarial Networks and Hierarchical Supervised Learning (CHSL). The code retains the reported RF, LightGBM, SVR, HSL, and CHSL structures and evaluates them with outer five-fold cross-validation.
 
 ## Method
 
@@ -123,4 +123,4 @@ When using the dataset, cite Bouba et al. (2021) using the reference above. When
 
 ## Reproduction scope
 
-This repository implements the final paper methodology and intentionally excludes the legacy fixed 60/40 split, exploratory CTGAN sample-size trials, debugging cells, unsuccessful `TreeExplainer` calls, and unrelated LIME/permutation-importance experiments. Full numerical reproduction of the published tables was not attempted during repository preparation.
+This repository implements the final paper methodology. Full numerical reproduction of the published tables was not attempted during repository preparation.

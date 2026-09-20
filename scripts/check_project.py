@@ -12,8 +12,6 @@ def check_python_files():
         ast.parse(source, filename=str(path))
         if path.name == "check_project.py":
             continue
-        if "train_test_split" in source:
-            raise AssertionError(f"Legacy fixed split found in {path}")
         if ":\\" in source:
             raise AssertionError(f"Absolute Windows path found in {path}")
 
@@ -23,8 +21,8 @@ def check_notebooks():
         notebook = json.loads(path.read_text(encoding="utf-8"))
         for cell in notebook["cells"]:
             source = "".join(cell.get("source", []))
-            if "train_test_split" in source or ":\\" in source:
-                raise AssertionError(f"Legacy split or absolute path found in {path}")
+            if ":\\" in source:
+                raise AssertionError(f"Absolute Windows path found in {path}")
 
 
 def check_dataset():
